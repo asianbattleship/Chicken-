@@ -30,8 +30,8 @@ export class Swarm extends Drone {
         super(barrel, tank, tankDefinition, shootAngle);
         this.ai.viewRange = 850 * tank.sizeFactor * 2;
         this.physicsData.values.flags |= PhysicsFlags.canEscapeArena;
+            }
     }
 
     // TODO:
     // Add the custom resting state AI (after fixing real drone's)
-}

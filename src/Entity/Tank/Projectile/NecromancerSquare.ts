@@ -20,11 +20,12 @@ import Barrel from "../Barrel";
 import Drone from "./Drone";
 
 import { Color, PhysicsFlags, Tank } from "../../../Const/Enums";
-import { TankDefinition } from "../../../Const/TankDefinitions";
+import { TankDefinition, BarrelDefinition } from "../../../Const/TankDefinitions";
 import { AI } from "../../AI";
 import { BarrelBase } from "../TankBody";
-import AbstractShape from "../../Shape/AbstractShape";
 import LivingEntity from "../../Live";
+import Bullet from "./Bullet"
+import AutoTurret from "../AutoTurret"
 
 /**
  * The drone class represents the drone (projectile) entity in diep.

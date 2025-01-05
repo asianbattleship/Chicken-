@@ -99,11 +99,24 @@ export class PurpleBarrelAddon extends BarrelAddon {
         owner.styleData.color = Color.TeamPurple;
     }
 }
-
+export class BlueBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamBlue;
+    }
+}
+export class GreenBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamGreen;
+    }
+}
 /**
  * All barrel addons in the game by their ID.
  */
  export const BarrelAddonById: Record<barrelAddonId, typeof BarrelAddon | null> = {
     trapLauncher: TrapLauncherAddon,
-    purplebarrel: PurpleBarrelAddon
+    purplebarrel: PurpleBarrelAddon,
+    bluebarrel: BlueBarrelAddon,
+    greenbarrel: GreenBarrelAddon
 }

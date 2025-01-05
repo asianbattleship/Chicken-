@@ -19,6 +19,7 @@
 import GameServer from "../../Game";
 import ArenaEntity from "../../Native/Arena";
 import ObjectEntity from "../../Entity/Object";
+import MazeWall from "../../Entity/Misc/MazeWall";
 
 import Pentagon from "../../Entity/Shape/Pentagon";
 
@@ -55,7 +56,7 @@ export default class BallArena extends ArenaEntity {
         super(game);
 
         this.arenaData.values.flags |= ArenaFlags.canUseCheats;
-        this.updateBounds(2500, 2500);
+        this.updateBounds(3500, 3500);
 
         const ball = new ObjectEntity(game);
         ball.nameData = new NameGroup(ball);
@@ -66,5 +67,13 @@ export default class BallArena extends ArenaEntity {
         ball.physicsData.values.absorbtionFactor = 10;
         ball.physicsData.values.flags |= PhysicsFlags.isBase | PhysicsFlags.noOwnTeamCollision;
         ball.relationsData.values.team = ball;
+        const wall = new MazeWall(this.game, 0, -700, 400, 1500);
+        wall.physicsData.flags |= PhysicsFlags.canEscapeArena
+        const wall2 = new MazeWall(this.game, 0, 700, 400, 1500);
+        wall2.physicsData.flags |= PhysicsFlags.canEscapeArena
+        const wall3 = new MazeWall(this.game, 900, 700, 3500, 350);
+        wall3.physicsData.flags |= PhysicsFlags.canEscapeArena
+        const wall4 = new MazeWall(this.game, -900, 700, 1500, 350);
+        wall4.physicsData.flags |= PhysicsFlags.canEscapeArena
     }
 }

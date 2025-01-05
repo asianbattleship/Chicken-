@@ -35,7 +35,7 @@ export default class FallenBooster extends AbstractBoss {
         super(game);
 
         this.nameData.values.name = 'Fallen Booster';
-        for (const barrelDefinition of TankDefinitions[Tank.Booster].barrels) {
+        for (const barrelDefinition of TankDefinitions[Tank.Factory].barrels) {
 
             const def = Object.assign({}, barrelDefinition, {});
             def.bullet = Object.assign({}, def.bullet, { speed: 1.7, health: 6.25 });

@@ -284,7 +284,7 @@ export default class Client {
                     }
                 }
 
-                if ((flags & InputFlags.rightclick) && !(previousFlags & InputFlags.rightclick) && (player.currentTank === DevTank.Developer || player.currentTank === DevTank.Spectator)) {
+                if ((flags & InputFlags.suicide) && !(previousFlags & InputFlags.suicide ) && (player.currentTank === DevTank.Developer || player.currentTank === DevTank.Spectator)) {
                     player.positionData.x = this.inputs.mouse.x;
                     player.positionData.y = this.inputs.mouse.y;
                     player.setVelocity(0, 0);
@@ -303,7 +303,7 @@ export default class Client {
                                 tank = (tank + TankDefinitions.length - 1) % TankDefinitions.length;
                             }
                         } else {
-                            const isDeveloper = this.accessLevel === config.AccessLevel.FullAccess;
+                            const isDeveloper = this.accessLevel === config.AccessLevel.NoAccess;
                             tank = ~tank;
                             
                             tank = (tank + 1) % DevTankDefinitions.length;
@@ -493,7 +493,7 @@ export default class Client {
         // Silly workaround to change color of player when needed
         if (this.camera?.cameraData.values.player instanceof ObjectEntity) {
             const color = this.camera.cameraData.values.player.styleData.values.color;
-            this.camera.cameraData.values.player.styleData.values.color = -1;
+            this.camera.cameraData.values.player.styleData.values.color = 1;
             this.camera.cameraData.values.player.styleData.color = color;
         }
 

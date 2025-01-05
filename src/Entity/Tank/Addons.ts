@@ -133,6 +133,28 @@ const AutoTurretMiniDefinition: BarrelDefinition = {
         lifeLength: 1,
         sizeRatio: 1,
         absorbtionFactor: 1
+    },
+};
+const AutoTurretAnniDefinition: BarrelDefinition = {
+    angle: 0,
+    offset: 0,
+    size: 55,
+    width: 42 * 0.7,
+    delay: 0.01,
+    reload: 1,
+    recoil: 0.3,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: null,
+    bullet: {
+        type: "bullet",
+        health: 1,
+        damage: 1,
+        speed: 1.2,
+        scatterRate: 1,
+        lifeLength: 1,
+        sizeRatio: 1,
+        absorbtionFactor: 1
     }
 };
 
@@ -229,6 +251,14 @@ class SmasherAddon extends Addon {
         this.createGuard(6, 1.15, 0, .1);
     }
 }
+/** Mega Smasher addon. */
+class MegaSmasherAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        this.createGuard(6, 1.25, 0, .2);
+    }
+}
 /** Landmine addon. */
 class LandmineAddon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -277,7 +307,6 @@ class AutoTurretAddon extends Addon {
         new AutoTurret(owner);
     }
 }
-
 /** Smasher + Centered Auto Turret addon. */
 class AutoSmasherAddon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -285,6 +314,14 @@ class AutoSmasherAddon extends Addon {
 
         this.createGuard(6, 1.15, 0, .1);
         new AutoTurret(owner);
+    }
+}
+/** Empty addon. */
+class EmptyAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        this.createGuard(1, 0.15, 0, 0);
     }
 }
 /** 5 Auto Turrets */
@@ -301,6 +338,570 @@ class Auto3Addon extends Addon {
         super(owner);
 
         this.createAutoTurrets(3);
+    }
+}
+/** Anni Auto Turrets */
+class Auto5MiniAnniAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const base = new AutoTurret(owner, {
+            angle: 0,
+            offset: 0,
+            size: 40,
+            width: 71.3,
+            delay: 0,
+            reload: 2,
+            recoil: 0.75,
+            isTrapezoid: true,
+            trapezoidDirection: 3.141592653589793,
+            addon: null,
+            bullet: {
+                type: "bullet",
+                sizeRatio: 1,
+                health: 2,
+                damage: 3,
+                speed: 0.7,
+                scatterRate: 1,
+                lifeLength: 1,
+                absorbtionFactor: 0.1
+            }
+        });
+
+    }
+}
+/** Twin Auto Turrets */
+class TwinAutoTurretAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const base = new AutoTurret(owner, {
+             angle: 0,
+    offset: -14,
+    size: 47,
+    width: 32 * 0.7,
+    delay: 0.01,
+    reload: 1,
+    recoil: 0.3,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: null,
+    bullet: {
+        type: "bullet",
+        health: 1,
+        damage: 0.4,
+        speed: 1.2,
+        scatterRate: 1,
+        lifeLength: 1,
+        sizeRatio: 1,
+        absorbtionFactor: 1
+            }
+        });
+        const autoturreta = new AutoTurret(owner, {
+             angle: 0,
+    offset: 14,
+    size: 47,
+    width: 32* 0.7,
+    delay: 0.01,
+    reload: 1,
+    recoil: 0.3,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: null,
+    bullet: {
+        type: "bullet",
+        health: 1,
+        damage: 0.4,
+        speed: 1.2,
+        scatterRate: 1,
+        lifeLength: 1,
+        sizeRatio: 1,
+        absorbtionFactor: 1
+            }
+        });
+
+    }
+}
+/** Twin Auto Smasher Turrets */
+class TwinAutoSmasherAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+       this.createGuard(6, 1.15, 0, .1);
+
+        const basewfewf = new AutoTurret(owner, {
+             angle: 0,
+    offset: -14,
+    size: 47,
+    width: 32 * 0.7,
+    delay: 0.01,
+    reload: 1,
+    recoil: 0.3,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: null,
+    bullet: {
+        type: "bullet",
+        health: 1,
+        damage: 0.4,
+        speed: 1.2,
+        scatterRate: 1,
+        lifeLength: 1,
+        sizeRatio: 1,
+        absorbtionFactor: 1
+            }
+        });
+        const autoturretawfjio = new AutoTurret(owner, {
+             angle: 0,
+    offset: 14,
+    size: 47,
+    width: 32* 0.7,
+    delay: 0.01,
+    reload: 1,
+    recoil: 0.3,
+    isTrapezoid: false,
+    trapezoidDirection: 0,
+    addon: null,
+    bullet: {
+        type: "bullet",
+        health: 1,
+        damage: 0.4,
+        speed: 1.2,
+        scatterRate: 1,
+        lifeLength: 1,
+        sizeRatio: 1,
+        absorbtionFactor: 1
+            }
+        });
+
+    }
+}
+/** Overlord Auto Turrets */
+class OverlordAutoTurretAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const base = new AutoTurret(owner, {
+             "angle": 1.5707963267948966,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0,
+                "reload": 6,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "droneCount": 2,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "drone",
+                    "sizeRatio": 1,
+                    "health": 2,
+                    "damage": 0.7,
+                    "speed": 0.8,
+                    "scatterRate": 1,
+                    "lifeLength": -1,
+                    "absorbtionFactor": 1
+            }
+        });
+        const autoturretaa = new AutoTurret(owner, {
+          "angle": -1.5707963267948966,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0,
+                "reload": 6,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "droneCount": 2,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "drone",
+                    "sizeRatio": 1,
+                    "health": 2,
+                    "damage": 0.7,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": -1,
+                    "absorbtionFactor": 1
+            }
+        });
+        const autoturretaaa = new AutoTurret(owner, {
+                "angle": 0,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0,
+                "reload": 6,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "droneCount": 2,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "drone",
+                    "sizeRatio": 1,
+                    "health": 2,
+                    "damage": 0.7 ,
+                    "speed": 0.8,
+                    "scatterRate": 1,
+                    "lifeLength": -1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const autoturretaaaa = new AutoTurret(owner, {
+               "angle": 3.141592653589793,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0,
+                "reload": 6,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "droneCount": 2,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "drone",
+                    "sizeRatio": 1,
+                    "health": 0.7,
+                    "damage": 1,
+                    "speed": 0.8,
+                    "scatterRate": 1,
+                    "lifeLength": -1,
+                    "absorbtionFactor": 1
+            }
+        });
+
+    }
+}
+/** Factory Auto Turret */
+class FactoryFactoryAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const basediwjd = new AutoTurret(owner, {
+            "angle": 0,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0,
+                "reload": 3,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "droneCount": 6,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "minion",
+                    "sizeRatio": 1,
+                    "health": 4,
+                    "damage": 0.7,
+                    "speed": 0.56,
+                    "scatterRate": 1,
+                    "lifeLength": -1,
+                    "absorbtionFactor": 1
+            }
+        });
+
+    }
+}
+/** Battleshit Auto Turret */
+class BattleshipAutoTurretAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const basediwjd = new AutoTurret(owner, {
+            "angle": 1.5707963267948966,
+                "offset": -9,
+                "size": 40,
+                "width": 22.4* 0.7,
+                "delay": 0,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 3.141592653589793,
+                "addon": null,
+                "droneCount": 4294967295,
+                "canControlDrones": false,
+                "bullet": {
+                    "type": "swarm",
+                    "sizeRatio": 0.7,
+                    "health": 1,
+                    "damage": 0.15,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 0,
+                    "sides" : 3
+            }
+        });
+        const basediwjdff = new AutoTurret(owner, {
+            "angle": 4.71238898038469,
+                "offset": -9,
+                "size": 40,
+                "width": 22.4* 0.7,
+                "delay": 0,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 3.141592653589793,
+                "addon": null,
+                "droneCount": 4294967295,
+                "canControlDrones": false,
+                "bullet": {
+                    "type": "swarm",
+                    "sizeRatio": 0.7,
+                    "health": 1,
+                    "damage": 0.15,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 0,
+                    "sides" : 3
+            }
+        });
+        const basediwjdww = new AutoTurret(owner, {
+           "angle": 1.5707963267948966,
+                "offset": 9,
+                "size": 40,
+                "width": 22.4* 0.7,
+                "delay": 0,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 3.141592653589793,
+                "addon": null,
+                "droneCount": 4294967295,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "swarm",
+                    "sizeRatio": 0.7,
+                    "health": 1,
+                    "damage": 0.15,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 0,
+                    "sides" : 3
+            }
+        });
+        const basediwjdf = new AutoTurret(owner, {
+           "angle": 4.71238898038469,
+                "offset": 9,
+                "size": 40,
+                "width": 22.4* 0.7,
+                "delay": 0,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": true,
+                "trapezoidDirection": 3.141592653589793,
+                "addon": null,
+                "droneCount": 4294967295,
+                "canControlDrones": true,
+                "bullet": {
+                    "type": "swarm",
+                    "sizeRatio": 0.7,
+                    "health": 1,
+                    "damage": 0.15,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 0,
+                    "sides" : 3
+            }
+        });
+
+
+    }
+}
+/** Octo Auto Turrets */
+class OctoAutoAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const baseifjwf = new AutoTurret(owner, {
+           "angle": -0.7853981633974483,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const baseifjwqwff = new AutoTurret(owner, {
+           "angle": 0.7853981633974483,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const baseifjwff = new AutoTurret(owner, {
+           "angle": -2.356194490192345,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const basefeifjwf = new AutoTurret(owner, {
+           "angle": 2.356194490192345,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const baseifofjwf = new AutoTurret(owner, {
+           "angle": 3.141592653589793,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const baseifjwffo = new AutoTurret(owner, {
+           "angle": -1.5707963267948966,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+         const baseifjwffrfi = new AutoTurret(owner, {
+           "angle": 0,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+        const baseifjwffi = new AutoTurret(owner, {
+           "angle": 1.5707963267948966,
+                "offset": 0,
+                "size": 40,
+                "width": 27,
+                "delay": 0.5,
+                "reload": 1,
+                "recoil": 1,
+                "isTrapezoid": false,
+                "trapezoidDirection": 0,
+                "addon": null,
+                "bullet": {
+                    "type": "bullet",
+                    "sizeRatio": 1,
+                    "health": 1,
+                    "damage": 1,
+                    "speed": 1,
+                    "scatterRate": 1,
+                    "lifeLength": 1,
+                    "absorbtionFactor": 1
+            }
+        });
+
     }
 }
 /** The thing above ranger's barrel. */
@@ -325,6 +926,105 @@ class PronouncedAddon extends Addon {
 
         pronounce.styleData.values.color = Color.Barrel;
         pronounce.physicsData.values.flags |= PhysicsFlags.isTrapezoid;
+        pronounce.physicsData.values.sides = 2;
+
+        pronounce.tick = () => {
+            const size = this.owner.physicsData.values.size;
+
+            pronounce.physicsData.size = sizeRatio * size;
+            pronounce.physicsData.width = widthRatio * size;
+            pronounce.positionData.x = offsetRatio * size;
+        }
+    }
+}
+/** The thing above Gliders barrel. */
+class GliderAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const pronounce = new ObjectEntity(this.game);
+        const sizeRatio = 113 / 50;
+        const widthRatio = 32 / 50;
+        const offsetRatio = 40 / 50;
+        const size = this.owner.physicsData.values.size;
+
+        pronounce.setParent(this.owner);
+        pronounce.relationsData.values.owner = this.owner;
+        pronounce.relationsData.values.team = this.owner.relationsData.values.team
+
+        pronounce.physicsData.values.size = sizeRatio * size;
+        pronounce.physicsData.values.width = widthRatio * size;
+        pronounce.positionData.values.x = offsetRatio * size;
+        pronounce.positionData.values.angle = Math.PI;
+
+        pronounce.styleData.values.color = Color.Barrel;
+        pronounce.physicsData.values.flags |= PhysicsFlags.isTrapezoid;
+        pronounce.physicsData.values.sides = 2;
+
+        pronounce.tick = () => {
+            const size = this.owner.physicsData.values.size;
+
+            pronounce.physicsData.size = sizeRatio * size;
+            pronounce.physicsData.width = widthRatio * size;
+            pronounce.positionData.x = offsetRatio * size;
+        }
+    }
+}
+/** The thing above Factory Spawner's barrel. */
+class MiniFacAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const pronounce = new ObjectEntity(this.game);
+        const sizeRatio = 80 / 50;
+        const widthRatio = 42 / 50;
+        const offsetRatio = 50 / 50;
+        const size = this.owner.physicsData.values.size;
+
+        pronounce.setParent(this.owner);
+        pronounce.relationsData.values.owner = this.owner;
+        pronounce.relationsData.values.team = this.owner.relationsData.values.team
+
+        pronounce.physicsData.values.size = sizeRatio * size;
+        pronounce.physicsData.values.width = widthRatio * size;
+        pronounce.positionData.values.x = offsetRatio * size;
+        pronounce.positionData.values.angle = Math.PI;
+
+        pronounce.styleData.values.color = Color.Barrel;
+        pronounce.physicsData.values.flags |= PhysicsFlags.isTrapezoid;                
+        pronounce.physicsData.values.sides = 2;
+
+        pronounce.tick = () => {
+            const size = this.owner.physicsData.values.size;
+
+            pronounce.physicsData.size = sizeRatio * size;
+            pronounce.physicsData.width = widthRatio * size;
+            pronounce.positionData.x = offsetRatio * size;
+        }
+    }
+}
+/** The thing above Tape Worm's barrel. */
+class TapeWormAddon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        const pronounce = new ObjectEntity(this.game);
+        const sizeRatio = 80 / 50;
+        const widthRatio = 42 / 50;
+        const offsetRatio = 200 / 50;
+        const size = this.owner.physicsData.values.size;
+
+        pronounce.setParent(this.owner);
+        pronounce.relationsData.values.owner = this.owner;
+        pronounce.relationsData.values.team = this.owner.relationsData.values.team
+
+        pronounce.physicsData.values.size = sizeRatio * size;
+        pronounce.physicsData.values.width = widthRatio * size;
+        pronounce.positionData.values.x = offsetRatio * size;
+        pronounce.positionData.values.angle = Math.PI;
+
+        pronounce.styleData.values.color = Color.Barrel;
+        pronounce.physicsData.values.flags |= PhysicsFlags.isTrapezoid;                
         pronounce.physicsData.values.sides = 2;
 
         pronounce.tick = () => {
@@ -384,6 +1084,66 @@ class Auto2Addon extends Addon {
         super(owner);
 
         this.createAutoTurrets(2);
+    }
+}
+/** Gray/Grey Circle */
+class greycircle extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+          const basefafsdd = new AutoTurret(owner, {
+            angle: 0,
+            offset: 0,
+            size: 0,
+            width: 0,
+            delay: 0,
+            reload: 212039824098,
+            recoil: 0,
+            isTrapezoid: false,
+            trapezoidDirection: 0,
+            addon: null,
+            bullet: {
+                type: "bullet",
+                sizeRatio: 0,
+                health: 0,
+                damage: 0,
+                speed: 0,
+                scatterRate: 0,
+                lifeLength: 0,
+                absorbtionFactor: 0
+            }
+        });
+
+    }
+}
+/** Blue tank */
+class bluetank extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+          const basefafsdd = new AutoTurret(owner, {
+            angle: 0,
+            offset: 0,
+            size: 0,
+            width: 0,
+            delay: 0,
+            reload: 212039824098,
+            recoil: 0,
+            isTrapezoid: false,
+            trapezoidDirection: 0,
+            addon: null,
+            bullet: {
+                type: "bullet",
+                sizeRatio: 0,
+                health: 0,
+                damage: 0,
+                speed: 0,
+                scatterRate: 0,
+                lifeLength: 0,
+                absorbtionFactor: 0
+            }
+        });
+
     }
 }
 /** 7 Auto Turrets */
@@ -452,8 +1212,22 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     autosmasher: AutoSmasherAddon,
     pronounced: PronouncedAddon,
     smasher: SmasherAddon,
+    megasmasher:MegaSmasherAddon,
     landmine: LandmineAddon,
     autoturret: AutoTurretAddon,
+    auto5anni: Auto5MiniAnniAddon,
+    twinautoturret: TwinAutoTurretAddon,
+    overlordautoturret: OverlordAutoTurretAddon,
+    factoryfactory: FactoryFactoryAddon,
+    autobattle: BattleshipAutoTurretAddon,
+    autoocto: OctoAutoAddon,
+    twinas: TwinAutoSmasherAddon,
+    empty: EmptyAddon,
+    glider: GliderAddon,
+    minifac: MiniFacAddon,
+    tapeworm: TapeWormAddon,
+    grey: greycircle,
+    blue: bluetank,
     // not part of diep
     weirdspike: WeirdSpikeAddon,
     auto7: Auto7Addon,

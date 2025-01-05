@@ -24,6 +24,22 @@ import Drone from "./Projectile/Drone";
 import Rocket from "./Projectile/Rocket";
 import Skimmer from "./Projectile/Skimmer";
 import Minion from "./Projectile/Minion";
+import arenacloser from "./Projectile/arenacloser";
+import autodrone from "./Projectile/Autodrone";
+import overlord from "./Projectile/overlord";
+import rambooster from "./Projectile/rambooster";
+import ramanni from "./Projectile/ramanni";
+import friend from "./Projectile/friend";
+import Servant from "./Projectile/servant";
+import Nice from "./Projectile/nice";
+import Snitrap from "./Projectile/Snitrap";
+import minifactory from "./Projectile/minifactory";
+import Glide from "./Projectile/Glide";
+import bomb from "./Projectile/Bomb";
+import flingbomb from "./Projectile/flingbomb";
+import TrapBomb from "./Projectile/TrapBomb";
+import autobullet from "./Projectile/Autobullet";
+import Twinminion from "./Projectile/Twinminion";
 import ObjectEntity from "../Object";
 import TankBody, { BarrelBase } from "./TankBody";
 
@@ -172,6 +188,24 @@ export default class Barrel extends ObjectEntity {
             case "rocket":
                 new Rocket(this, this.tank, tankDefinition, angle);
                 break;
+            case "glide":
+                new Glide(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "bomb":
+                new bomb(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "flingbomb":
+                new flingbomb(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "trapbomb":
+                new TrapBomb(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case  "twinminion":
+                new Twinminion(this, this.tank, tankDefinition, angle);
+                break;
+            case  "minifactory":
+                new minifactory(this, this.tank, tankDefinition, angle);
+                break;
             case 'bullet': {
                 const bullet = new Bullet(this, this.tank, tankDefinition, angle);
 
@@ -180,6 +214,15 @@ export default class Barrel extends ObjectEntity {
             }
             case 'trap':
                 new Trap(this, this.tank, tankDefinition, angle);
+                break;
+            case 'Snitrap':
+                new Snitrap(this, this.tank, tankDefinition, angle);
+                break;
+            case 'nice':
+                new Nice(this, this.tank, tankDefinition, angle);
+                break;
+            case 'autobullet':
+                new autobullet(this, this.tank, tankDefinition, angle);
                 break;
             case 'drone':
                 new Drone(this, this.tank, tankDefinition, angle);
@@ -192,6 +235,27 @@ export default class Barrel extends ObjectEntity {
                 break;
             case 'minion':
                 new Minion(this, this.tank, tankDefinition, angle);
+                break;
+            case 'arenacloser':
+                new arenacloser(this, this.tank, tankDefinition, angle);
+                break;
+            case 'autodrone':
+                new autodrone(this, this.tank, tankDefinition, angle);
+                break;
+            case 'rambooster':
+                new rambooster(this, this.tank, tankDefinition, angle);
+                break;
+            case 'ramanni':
+                new ramanni(this, this.tank, tankDefinition, angle);
+                break;
+            case 'overlord':
+                new overlord(this, this.tank, tankDefinition, angle);
+                break;
+            case 'friend':
+                new friend(this, this.tank, tankDefinition, angle);
+                break;
+            case 'servant':
+                new Servant(this, this.tank, tankDefinition, angle);
                 break;
             case 'flame':
                 new Flame(this, this.tank, tankDefinition, angle);

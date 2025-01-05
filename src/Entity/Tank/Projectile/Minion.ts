@@ -48,7 +48,7 @@ import { CameraEntity } from "../../../Native/Camera";
         lifeLength: 1,
         sizeRatio: 1,
         absorbtionFactor: 1
-    }
+        }
 };
 
 /**
