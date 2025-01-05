@@ -161,7 +161,8 @@ export const enum Tank {
     nopename      = 87,
     bouncer       = 88,
     annibouncer   = 89,
-    flingbomber   = 90
+    flingbomber   = 90,
+    interferer    = 91
 }
 
 /**

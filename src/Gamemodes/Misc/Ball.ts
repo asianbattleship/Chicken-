@@ -27,6 +27,9 @@ import { Color, ArenaFlags, PhysicsFlags } from "../../Const/Enums";
 import { NameGroup } from "../../Native/FieldGroups";
 import AbstractShape from "../../Entity/Shape/AbstractShape";
 import { SandboxShapeManager } from "../Sandbox";
+import Square from "../../Entity/Shape/Square";
+import Triangle from "../../Entity/Shape/Triangle";
+import NecromancerSquare from "../../Entity/Tank/Projectile/NecromancerSquare";
 
 /**
  * Only spawns crashers
@@ -35,7 +38,7 @@ class CustomShapeManager extends SandboxShapeManager {
     protected spawnShape(): AbstractShape {
         const {x, y} = this.arena.findSpawnLocation();
 
-        const penta = new Pentagon(this.game, Math.random() < 0.25, Math.random() < 0.1);
+        const penta = new Square(this.game, Math.random() < 0.25,);
 
         penta.positionData.values.x = Math.sign(x) * (Math.abs(x) - 200);
         penta.positionData.values.y = Math.sign(y) * (Math.abs(y) - 200);
@@ -71,7 +74,7 @@ export default class BallArena extends ArenaEntity {
         wall.physicsData.flags |= PhysicsFlags.canEscapeArena
         const wall2 = new MazeWall(this.game, 0, 700, 400, 1500);
         wall2.physicsData.flags |= PhysicsFlags.canEscapeArena
-        const wall3 = new MazeWall(this.game, 900, 700, 3500, 350);
+        const wall3 = new MazeWall(this.game, 1400, 200, 3000, 350);
         wall3.physicsData.flags |= PhysicsFlags.canEscapeArena
         const wall4 = new MazeWall(this.game, -900, 700, 1500, 350);
         wall4.physicsData.flags |= PhysicsFlags.canEscapeArena
