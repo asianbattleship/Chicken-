@@ -33,6 +33,7 @@ import { Inputs } from "../../AI"
 
 import { DevTank } from "../../../Const/DevTankDefinitions";
 import { PI2 } from "../../../util";
+import MazeWall from "../../Misc/MazeWall";
 
 /**
  * The trap class represents the trap (projectile) entity in diep.
@@ -81,8 +82,8 @@ export default class AutoTrap extends Bullet {
 
         const bulletDefinition = barrel.definition.bullet;
 
-        this.baseSpeed = (barrel.bulletAccel / 2) + 30 - Math.random() * barrel.definition.bullet.scatterRate;
-        this.baseAccel = 60;
+        this.baseAccel = barrel.bulletAccel;
+        this.baseSpeed = barrel.bulletAccel + 30 - Math.random() * bulletDefinition.scatterRate;
         this.physicsData.values.sides = bulletDefinition.sides ?? 1;
         if (this.physicsData.values.flags & PhysicsFlags.noOwnTeamCollision) this.physicsData.values.flags ^= PhysicsFlags.noOwnTeamCollision;
         this.physicsData.values.flags |= PhysicsFlags.onlySameOwnerCollision;
@@ -117,6 +118,7 @@ export default class AutoTrap extends Bullet {
         if (tick - this.spawnTick === this.collisionEnd) {
             if (this.physicsData.values.flags & PhysicsFlags.onlySameOwnerCollision) this.physicsData.flags ^= PhysicsFlags.onlySameOwnerCollision;
             this.physicsData.values.flags |= PhysicsFlags.noOwnTeamCollision;
+
         }
     }
 }

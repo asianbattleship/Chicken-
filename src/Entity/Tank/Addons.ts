@@ -251,6 +251,7 @@ class SmasherAddon extends Addon {
         this.createGuard(6, 1.15, 0, .1);
     }
 }
+
 /** Mega Smasher addon. */
 class MegaSmasherAddon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -1086,6 +1087,14 @@ class Auto2Addon extends Addon {
         this.createAutoTurrets(2);
     }
 }
+/** 1 Auto Turrets */
+class Auto1Addon extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+
+        this.createAutoTurrets(1);
+    }
+}
 /** Gray/Grey Circle */
 class greycircle extends Addon {
     public constructor(owner: BarrelBase) {
@@ -1120,30 +1129,9 @@ class greycircle extends Addon {
 class bluetank extends Addon {
     public constructor(owner: BarrelBase) {
         super(owner);
+        owner.styleData.color = Color.TeamBlue;
 
-          const basefafsdd = new AutoTurret(owner, {
-            angle: 0,
-            offset: 0,
-            size: 0,
-            width: 0,
-            delay: 0,
-            reload: 212039824098,
-            recoil: 0,
-            isTrapezoid: false,
-            trapezoidDirection: 0,
-            addon: null,
-            bullet: {
-                type: "bullet",
-                sizeRatio: 0,
-                health: 0,
-                damage: 0,
-                speed: 0,
-                scatterRate: 0,
-                lifeLength: 0,
-                absorbtionFactor: 0
-            }
-        });
-
+          
     }
 }
 /** 7 Auto Turrets */
@@ -1228,6 +1216,7 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     tapeworm: TapeWormAddon,
     grey: greycircle,
     blue: bluetank,
+    auto1: Auto1Addon,
     // not part of diep
     weirdspike: WeirdSpikeAddon,
     auto7: Auto7Addon,

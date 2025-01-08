@@ -19,10 +19,17 @@
 import * as util from "../../util";
 
 import Bullet from "./Projectile/Bullet";
+import apt from "./Projectile/AutoDrone2";
+import rap from "./Projectile/rap";
 import Trap from "./Projectile/Trap";
 import Drone from "./Projectile/Drone";
 import Rocket from "./Projectile/Rocket";
+import patienceisavirtue from "./Projectile/patienceisavirtue";
 import Skimmer from "./Projectile/Skimmer";
+import flipfire from "./Projectile/flipfire";
+import turner from "./Projectile/turner";
+import sideturner from "./Projectile/sideturner";
+import strafer from "./Projectile/strafer";
 import Minion from "./Projectile/Minion";
 import arenacloser from "./Projectile/arenacloser";
 import autodrone from "./Projectile/Autodrone";
@@ -36,6 +43,7 @@ import Snitrap from "./Projectile/Snitrap";
 import minifactory from "./Projectile/minifactory";
 import Glide from "./Projectile/Glide";
 import bomb from "./Projectile/Bomb";
+import popper from "./Projectile/popper";
 import flingbomb from "./Projectile/flingbomb";
 import TrapBomb from "./Projectile/TrapBomb";
 import autobullet from "./Projectile/Autobullet";
@@ -185,14 +193,35 @@ export default class Barrel extends ObjectEntity {
             case "skimmer":
                 new Skimmer(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
                 break;
+             case "flipfire":
+                new flipfire(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "turner":
+                new turner(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "sideturner":
+                new sideturner(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "strafer":
+                new strafer(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
             case "rocket":
                 new Rocket(this, this.tank, tankDefinition, angle);
                 break;
+            case "rap":
+                new rap(this, this.tank, tankDefinition, angle);
+                break;
+            case "patienceisavirtue":
+                new patienceisavirtue(this, this.tank, tankDefinition, angle);
+                break;
             case "glide":
-                new Glide(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                new Glide(this, this.tank, tankDefinition, angle);
                 break;
             case "bomb":
                 new bomb(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
+                break;
+            case "popper":
+                new popper(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
                 break;
             case "flingbomb":
                 new flingbomb(this, this.tank, tankDefinition, angle, this.tank.inputs.attemptingRepel() ? -Skimmer.BASE_ROTATION : Skimmer.BASE_ROTATION);
@@ -214,6 +243,9 @@ export default class Barrel extends ObjectEntity {
             }
             case 'trap':
                 new Trap(this, this.tank, tankDefinition, angle);
+                break;
+            case 'apt':
+                new apt(this, this.tank, tankDefinition, angle);
                 break;
             case 'Snitrap':
                 new Snitrap(this, this.tank, tankDefinition, angle);

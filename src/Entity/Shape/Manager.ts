@@ -21,6 +21,7 @@ import GameServer from "../../Game";
 
 import Crasher from "./Crasher";
 import Pentagon from "./Pentagon";
+import Nonagon from "./Wentagon";
 import Triangle from "./Triangle";
 import Square from "./Square";
 import AbstractShape from "./AbstractShape";
@@ -86,6 +87,12 @@ export default class ShapeManager {
                 shape.relationsData.values.owner = shape.relationsData.values.team = this.arena;
             } else { // if rand < 80%
                 shape = new Square(this.game);
+
+                shape.positionData.values.x = x;
+                shape.positionData.values.y = y;
+                shape.relationsData.values.owner = shape.relationsData.values.team = this.arena;
+            } { // if rand < 90%
+                shape = new Nonagon(this.game);
 
                 shape.positionData.values.x = x;
                 shape.positionData.values.y = y;

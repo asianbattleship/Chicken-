@@ -30,6 +30,7 @@ import { SandboxShapeManager } from "../Sandbox";
 import Square from "../../Entity/Shape/Square";
 import Triangle from "../../Entity/Shape/Triangle";
 import NecromancerSquare from "../../Entity/Tank/Projectile/NecromancerSquare";
+import Nonagon from "../../Entity/Shape/Wentagon";
 
 /**
  * Only spawns crashers
@@ -38,7 +39,7 @@ class CustomShapeManager extends SandboxShapeManager {
     protected spawnShape(): AbstractShape {
         const {x, y} = this.arena.findSpawnLocation();
 
-        const penta = new Square(this.game, Math.random() < 0.25,);
+        const penta = new Nonagon(this.game, Math.random() < 0.25,);
 
         penta.positionData.values.x = Math.sign(x) * (Math.abs(x) - 200);
         penta.positionData.values.y = Math.sign(y) * (Math.abs(y) - 200);

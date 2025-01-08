@@ -41,7 +41,8 @@ export const enum Color {
     NecromancerSquare = 16,
     Fallen = 17,
 
-    kMaxColors = 18
+    kMaxColors = 18,
+    TeamYellow = 19
 }
 
 /**
@@ -55,6 +56,7 @@ export const ColorsHexCode: Record<Color, number> = {
     [Color.TeamRed]: 0xF14E54,
     [Color.TeamPurple]: 0xBF7FF5,
     [Color.TeamGreen]: 0x00E16E,
+    [Color.TeamYellow]: 0xFFFF00,
     [Color.Shiny]: 0x8AFF69,
     [Color.EnemySquare]: 0xFFE869,
     [Color.EnemyTriangle]: 0xFC7677,
@@ -135,7 +137,7 @@ export const enum Tank {
     autobasic     = 61,
     autoseer      = 62,
     sentinel      = 63,
-    explorer      = 64,
+    hitman        = 64,
     doubleautotank= 65,
     factoryfactory= 66,
     overbaron     = 67,
@@ -162,7 +164,28 @@ export const enum Tank {
     bouncer       = 88,
     annibouncer   = 89,
     flingbomber   = 90,
-    interferer    = 91
+    interferer    = 91,
+    patienceisavirtue = 92,
+    loser         = 93,
+    turner        = 94,
+    strafer       = 95,
+    crossfire     = 96,
+    popper        = 97,
+    flipfirer     = 98,
+    combatant     = 99,
+    ghost         = 100,
+    straydrone    = 101,
+    executioner   = 102,
+    email         = 103,
+    chipper       = 104,
+    sprinkles     = 105,
+    tripleangle   = 106,
+    funnytanks    = 107,
+    unbooster     = 108,
+    unboosterlord = 109,
+    unboosterflank= 110,
+   eightleafclover= 111,
+   auto1          = 112
 }
 
 /**
