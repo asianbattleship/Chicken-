@@ -1134,6 +1134,42 @@ class bluetank extends Addon {
           
     }
 }
+/** Red tank */
+class redtank extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+        owner.styleData.color = Color.TeamRed;
+
+          
+    }
+}
+/** White tank */
+class whitetank extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+        owner.styleData.color = Color.TeamWhite;
+
+          
+    }
+}
+/** Yellow tank */
+class Yellowtank extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+        owner.styleData.color = Color.TeamYellow;
+
+          
+    }
+}
+/** Green tank */
+class Greentank extends Addon {
+    public constructor(owner: BarrelBase) {
+        super(owner);
+        owner.styleData.color = Color.TeamGreen;
+
+          
+    }
+}
 /** 7 Auto Turrets */
 class Auto7Addon extends Addon {
     public constructor(owner: BarrelBase) {
@@ -1217,6 +1253,10 @@ export const AddonById: Record<addonId, typeof Addon | null> = {
     grey: greycircle,
     blue: bluetank,
     auto1: Auto1Addon,
+    redtank: redtank,
+    whitetank: whitetank,
+    yellowtank: Yellowtank,
+    greentank: Greentank,
     // not part of diep
     weirdspike: WeirdSpikeAddon,
     auto7: Auto7Addon,

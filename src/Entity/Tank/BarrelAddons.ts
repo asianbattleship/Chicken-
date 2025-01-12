@@ -117,6 +117,42 @@ export class YellowBarrelAddon extends BarrelAddon {
         owner.styleData.color = Color.TeamYellow;
     }
 }
+export class LightBlueBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamLightBlue;
+    }
+}
+export class LightPinkBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamLightPink;
+    }
+}
+export class WhiteBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamWhite;
+    }
+}
+export class RedBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamRed;
+    }
+}
+export class DarkBlueBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamDarkBlue;
+    }
+}
+export class OrangeBarrelAddon extends BarrelAddon {
+    public constructor(owner: Barrel) {
+        super(owner);
+        owner.styleData.color = Color.TeamOrange;
+    }
+}
 /**
  * All barrel addons in the game by their ID.
  */
@@ -125,5 +161,11 @@ export class YellowBarrelAddon extends BarrelAddon {
     purplebarrel: PurpleBarrelAddon,
     bluebarrel: BlueBarrelAddon,
     greenbarrel: GreenBarrelAddon,
-    yellowbarrel: YellowBarrelAddon
+    yellowbarrel: YellowBarrelAddon,
+    lightbluebarrel: LightBlueBarrelAddon,
+    lightpinkbarrel: LightPinkBarrelAddon,
+    whitebarrel: WhiteBarrelAddon,
+    redbarrel: RedBarrelAddon,
+    darkbluebarrel: DarkBlueBarrelAddon,
+    orangebarrel: OrangeBarrelAddon
 }

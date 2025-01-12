@@ -284,11 +284,19 @@ export default class Client {
                     }
                 }
 
-                if ((flags & InputFlags.suicide) && !(previousFlags & InputFlags.suicide ) && (player.currentTank === DevTank.Developer || player.currentTank === DevTank.Spectator)) {
-                    player.positionData.x = this.inputs.mouse.x;
-                    player.positionData.y = this.inputs.mouse.y;
-                    player.setVelocity(0, 0);
-                    player.entityState |= EntityStateFlags.needsCreate | EntityStateFlags.needsDelete;
+                if ((flags & InputFlags.suicide)) {
+                    if (this.accessLevel >= config.AccessLevel.BetaAccess) {
+                        this.setHasCheated(true);
+                        player.setTank(player.currentTank < 0 ? Tank.Basic : Tank.empty);
+                    } else if (this.game.arena.arenaData.values.flags & ArenaFlags.canUseCheats) {
+                        if (this.game.clients.size === 1 && this.game.arena.state === ArenaState.OPEN) {
+                            this.setHasCheated(true);
+
+                            player.setInvulnerability(!player.isInvulnerable);
+                            
+                            this.notify(`God mode: ${player.isInvulnerable ? "ON" : "OFF"}`, 0x000000, 1000, 'godmode');
+                        }
+                    }
                 }
 
                 if ((flags & InputFlags.switchtank) && !(previousFlags & InputFlags.switchtank)) {
@@ -331,8 +339,6 @@ export default class Client {
                         this.setHasCheated(true);
                         
                         this.notify("You've killed " + (player.nameData.values.name === "" ? "an unnamed tank" : player.nameData.values.name));
-                        camera.cameraData.killedBy = player.nameData.values.name;
-                        player.destroy();
                     }
                 }
                 

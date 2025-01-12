@@ -19,7 +19,8 @@
 import GameServer from "../../Game";
 import ObjectEntity from "../Object";
 
-import { PhysicsFlags, Color } from "../../Const/Enums";
+import { PhysicsFlags, Color, } from "../../Const/Enums";
+import LivingEntity from "../Live";
 /**
  * Only used for maze walls and nothing else.
  */

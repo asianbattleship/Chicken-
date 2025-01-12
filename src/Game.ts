@@ -35,6 +35,7 @@ import DominationTestingArena from "./Gamemodes/Misc/DomTest";
 import JungleArena from "./Gamemodes/Misc/Jungle";
 import FactoryTestArena from "./Gamemodes/Misc/FactoryTest";
 import BallArena from "./Gamemodes/Misc/Ball";
+import empty from "./Gamemodes/Misc/empty";
 import BallPitArena from "./Gamemodes/Misc/Ballpit";
 import MazeArena from "./Gamemodes/Maze";
 
@@ -58,7 +59,7 @@ class WSSWriterStream extends Writer {
     }
 }
 
-type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "mot" | "dom" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball" | "ballpit";
+type DiepGamemodeID = "ffa" | "sandbox" | "teams" | "4teams" | "mot" | "dom" | "maze" | "tag" | "survival" | "testing" | "spike" | "domtest" | "jungle" | "factest" | "ball" | "ballpit" | "empty";
 
 const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> & { "*": typeof ArenaEntity }= {
     "ffa": FFAArena,
@@ -77,7 +78,8 @@ const GamemodeToArenaClass: Record<DiepGamemodeID, (typeof ArenaEntity) | null> 
     "jungle": JungleArena,
     "factest": FactoryTestArena,
     "ball": BallArena,
-    "ballpit": BallPitArena
+    "ballpit": BallPitArena,
+    "empty": empty
 }
 
 /**

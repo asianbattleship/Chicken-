@@ -42,7 +42,12 @@ export const enum Color {
     Fallen = 17,
 
     kMaxColors = 18,
-    TeamYellow = 19
+    TeamYellow = 19,
+    TeamLightBlue = 20,
+    TeamLightPink = 21,
+    TeamWhite     = 22,
+    TeamDarkBlue  = 23,
+    TeamOrange    = 24
 }
 
 /**
@@ -57,6 +62,11 @@ export const ColorsHexCode: Record<Color, number> = {
     [Color.TeamPurple]: 0xBF7FF5,
     [Color.TeamGreen]: 0x00E16E,
     [Color.TeamYellow]: 0xFFFF00,
+    [Color.TeamLightBlue]: 0xADD8E6,
+    [Color.TeamLightPink]: 0xFFB6C1,
+    [Color.TeamDarkBlue]: 0x00008B,
+    [Color.TeamWhite]: 0xFFFFFF,
+    [Color.TeamOrange]: 0xFFA500,
     [Color.Shiny]: 0x8AFF69,
     [Color.EnemySquare]: 0xFFE869,
     [Color.EnemyTriangle]: 0xFC7677,
@@ -157,7 +167,7 @@ export const enum Tank {
     teamer        = 81,
     ramspawner    = 82,
     vortex        = 83,
-    arenacloserspawner = 84,
+    warden        = 84,
     twinsniper    = 85,
     thrasher      = 86,
     nopename      = 87,
@@ -185,7 +195,25 @@ export const enum Tank {
     unboosterlord = 109,
     unboosterflank= 110,
    eightleafclover= 111,
-   auto1          = 112
+   auto1          = 112,
+   minion         = 113,
+   transshot      = 114,
+   frenchtriplet  = 115,
+   romanianquad   = 116,
+   russianstream  = 117,
+   polandtwin     = 118,
+   usabattleship  = 119,
+   torch          = 120,
+   bulb           = 121,
+   output         = 122,
+   flicker        = 123,
+   blend          = 124,
+   firearm        = 125,
+   flamethrower   = 126,
+   pufferfish     = 127,
+   frenchfries    = 128,
+   orbiter        = 129,
+   tankball       = 130
 }
 
 /**

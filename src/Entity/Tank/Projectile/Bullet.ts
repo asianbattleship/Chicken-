@@ -19,10 +19,11 @@
 import LivingEntity from "../../Live";
 import Barrel from "../Barrel";
 
-import { HealthFlags, PositionFlags, PhysicsFlags, Stat, StyleFlags } from "../../../Const/Enums";
+import { HealthFlags, PositionFlags, PhysicsFlags, Stat, StyleFlags, Color } from "../../../Const/Enums";
 import { TankDefinition } from "../../../Const/TankDefinitions";
 import { BarrelBase } from "../TankBody";
 import { EntityStateFlags } from "../../../Native/Entity";
+import TeamBase from "../../Misc/TeamBase";
 
 /**
  * The bullet class represents the bullet entity in diep.

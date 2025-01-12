@@ -19,6 +19,12 @@
 import * as util from "../../util";
 
 import Bullet from "./Projectile/Bullet";
+import lightbluebullet from "./Projectile/lightbluebullet";
+import lightpinkbullet from "./Projectile/lightpinkbullet";
+import whitebullet from "./Projectile/whitebullet";
+import darkbluebullet from "./Projectile/Darkbluebullet";
+import redbullet from "./Projectile/Redbullet";
+import whitebullet2 from "./Projectile/whitebullet2";
 import apt from "./Projectile/AutoDrone2";
 import rap from "./Projectile/rap";
 import Trap from "./Projectile/Trap";
@@ -31,6 +37,7 @@ import turner from "./Projectile/turner";
 import sideturner from "./Projectile/sideturner";
 import strafer from "./Projectile/strafer";
 import Minion from "./Projectile/Minion";
+import orbit from "./Projectile/orbit";
 import arenacloser from "./Projectile/arenacloser";
 import autodrone from "./Projectile/Autodrone";
 import overlord from "./Projectile/overlord";
@@ -241,6 +248,43 @@ export default class Barrel extends ObjectEntity {
                 if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) bullet.positionData.flags |= PositionFlags.canMoveThroughWalls;
                 break;
             }
+            case 'lightbluebullet': {
+                const lightbluebullet = new lightpinkbullet(this, this.tank, tankDefinition, angle);
+
+                if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) lightbluebullet.positionData.flags |= PositionFlags.canMoveThroughWalls;
+                break;
+            }
+            case 'lightpinkbullet': {
+                const lightpinkbullet = new lightbluebullet(this, this.tank, tankDefinition, angle);
+
+                if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) lightpinkbullet.positionData.flags |= PositionFlags.canMoveThroughWalls;
+                break;
+            }
+            case 'darkbluebullet': {
+                const darkbluebullet = new redbullet(this, this.tank, tankDefinition, angle);
+
+                if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) darkbluebullet.positionData.flags |= PositionFlags.canMoveThroughWalls;
+                break;
+            }
+            case 'redbullet': {
+                const redbullet = new darkbluebullet(this, this.tank, tankDefinition, angle);
+
+                if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) redbullet.positionData.flags |= PositionFlags.canMoveThroughWalls;
+                break;
+            }
+            case 'whitebullet': {
+                const whitebullet = new Bullet(this, this.tank, tankDefinition, angle);
+
+                if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) whitebullet.positionData.flags |= PositionFlags.canMoveThroughWalls;
+                break;
+            }
+            case 'whitebullet2': {
+                const whitebullet2 = new whitebullet(this, this.tank, tankDefinition, angle);
+
+                if (tankDefinition && (tankDefinition.id === Tank.ArenaCloser || tankDefinition.id === DevTank.Squirrel)) whitebullet2.positionData.flags |= PositionFlags.canMoveThroughWalls;
+                break;
+            }
+
             case 'trap':
                 new Trap(this, this.tank, tankDefinition, angle);
                 break;
@@ -267,6 +311,9 @@ export default class Barrel extends ObjectEntity {
                 break;
             case 'minion':
                 new Minion(this, this.tank, tankDefinition, angle);
+                break;
+            case 'orbit':
+                new orbit(this, this.tank, tankDefinition, angle);
                 break;
             case 'arenacloser':
                 new arenacloser(this, this.tank, tankDefinition, angle);

@@ -57,7 +57,7 @@ export default class Drone extends Bullet {
         if (this.physicsData.values.flags & PhysicsFlags.noOwnTeamCollision) this.physicsData.values.flags ^= PhysicsFlags.noOwnTeamCollision;
         this.physicsData.values.flags |= PhysicsFlags.onlySameOwnerCollision;
         this.physicsData.values.flags ^= PhysicsFlags.canEscapeArena;
-        this.styleData.values.flags &= ~StyleFlags.hasNoDmgIndicator;
+       
 
         if (barrel.definition.bullet.lifeLength !== -1) {
             this.lifeLength = 88 * barrel.definition.bullet.lifeLength;

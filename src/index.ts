@@ -155,8 +155,9 @@ app.listen(PORT, (success) => {
     // NOTES(0): As of now, both servers run on the same process (and thread) here
         const ball = new GameServer ("ball", "nice")
         const ballpit = new GameServer ("ballpit", "ballpit")
+        const empty = new GameServer ("empty", "empty")
     
-    games.push(ball, ballpit);
+    games.push(ball, ballpit, empty);
 
     util.saveToLog("Servers up", "All servers booted up.", 0x37F554);
     util.log("Dumping endpoint -> gamemode routing table");
