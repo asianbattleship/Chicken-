@@ -9077,7 +9077,7 @@
                     "damage": 1,
                     "speed": 0.5,
                     "scatterRate": 1,
-                    "lifeLength": 1,
+                    "lifeLength": 0.35333333,
                     "absorbtionFactor": 0.1
                 }
             }
